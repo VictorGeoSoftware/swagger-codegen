@@ -23,13 +23,13 @@ package io.swagger.client.models
  */
 data class Order (
 
-    val id: kotlin.Long? = null,
-    val petId: kotlin.Long? = null,
-    val quantity: kotlin.Int? = null,
+    val id: Long? = null,
+    val petId: Long? = null,
+    val quantity: Int? = null,
     val shipDate: java.time.LocalDateTime? = null,
     /* Order Status */
     val status: Order.Status? = null,
-    val complete: kotlin.Boolean? = null
+    val complete: Boolean? = null
 ) {
     /**
     * Order Status

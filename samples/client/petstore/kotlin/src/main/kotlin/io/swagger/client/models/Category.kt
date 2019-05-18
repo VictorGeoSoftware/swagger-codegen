@@ -19,7 +19,7 @@ package io.swagger.client.models
  */
 data class Category (
 
-    val id: kotlin.Long? = null,
-    val name: kotlin.String? = null
+    val id: Long? = null,
+    val name: String? = null
 ) {
 }

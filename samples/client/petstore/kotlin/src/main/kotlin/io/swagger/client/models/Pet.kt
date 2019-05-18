@@ -24,12 +24,12 @@ import io.swagger.client.models.Tag
  * @param status pet status in the store
  */
 data class Pet (
-    val name: kotlin.String,
-    val photoUrls: kotlin.Array<kotlin.String>
+    val name: String,
+    val photoUrls: Array<kotlin.String>
 ,
-    val id: kotlin.Long? = null,
+    val id: Long? = null,
     val category: Category? = null,
-    val tags: kotlin.Array<Tag>? = null,
+    val tags: List<Tag>? = null,
     /* pet status in the store */
     val status: Pet.Status? = null
 ) {
