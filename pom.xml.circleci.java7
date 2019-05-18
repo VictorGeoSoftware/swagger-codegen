@@ -401,7 +401,7 @@
                 </property>
             </activation>
             <modules>
-                <module>samples/client/petstore/java/okhttp-gson/parcelableModel</module>
+                <module>samples/client/petstore/java/okhttp-gson-parcelableModel</module>
             </modules>
         </profile>
         <profile>
@@ -509,7 +509,7 @@
                 </property>
             </activation>
             <modules>
-                <module>samples/server/petstore/java-msf4/</module>
+                <module>samples/server/petstore/java-msf4j</module>
             </modules>
         </profile>
         <profile>
@@ -665,7 +665,7 @@
                 </property>
             </activation>
             <modules>
-                <module>samples/client/petstore/typescript-angularjs/npm</module>
+                <module>samples/client/petstore/typescript-angularjs</module>
             </modules>
         </profile>
         <profile>
