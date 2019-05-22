@@ -18,8 +18,8 @@ import java.util.Map;
 
 public abstract class AbstractKotlinCodegen extends DefaultCodegen implements CodegenConfig {
     static Logger LOGGER = LoggerFactory.getLogger(AbstractKotlinCodegen.class);
-    private static final String KT = "kotlin.";
-    private static final String KT_CL = "kotlin.collections.";
+//    private static final String KT = "kotlin.";
+//    private static final String KT_CL = "kotlin.collections.";
 
     protected String artifactId;
     protected String artifactVersion = "1.0.0";
@@ -38,19 +38,19 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
         supportsInheritance = true;
 
         languageSpecificPrimitives = new HashSet<String>(Arrays.asList(
-                KT + "Byte",
-                KT + "Short",
-                KT + "Int",
-                KT + "Long",
-                KT + "Float",
-                KT + "Double",
-                KT + "Boolean",
-                KT + "Char",
-                KT + "String",
-                KT + "Array",
-                KT_CL + "List",
-                KT_CL + "Map",
-                KT_CL + "Set"
+                "kotlin.Byte",
+                "kotlin.Short",
+                "kotlin.Int",
+                "kotlin.Long",
+                "kotlin.Float",
+                "kotlin.Double",
+                "kotlin.Boolean",
+                "kotlin.Char",
+                "kotlin.String",
+                "kotlin.Array",
+                "kotlin.List",
+                "kotlin.Map",
+                "kotlin.Set"
         ));
 
         // this includes hard reserved words defined by https://github.com/JetBrains/kotlin/blob/master/core/descriptors/src/org/jetbrains/kotlin/renderer/KeywordStringsGenerated.java
@@ -443,13 +443,16 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     @Override
     public String toModelName(final String name) {
         // Allow for explicitly configured kotlin.* and java.* types
-        if (name.startsWith("KT")) {
-            return name.replace(KT, "");
-        } else if (name.startsWith(KT_CL)) {
-            return name.replace(KT_CL, "");
-        } else if (name.startsWith("java.")) {
+        if (name.startsWith("kotlin.") || name.startsWith("java.")) {
             return name;
         }
+//        if (name.startsWith("KT")) {
+//            return name.replace(KT, "");
+//        } else if (name.startsWith(KT_CL)) {
+//            return name.replace(KT_CL, "");
+//        } else if (name.startsWith("java.")) {
+//            return name;
+//        }
 
         // If importMapping contains name, assume this is a legitimate model name.
         if (importMapping.containsKey(name)) {
