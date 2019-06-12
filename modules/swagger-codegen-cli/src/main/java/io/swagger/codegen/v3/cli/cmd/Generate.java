@@ -324,11 +324,12 @@ public class Generate implements Runnable {
             configurator.setCodegenArguments(codegenArguments);
         }
 
-        if (CodegenConstants.MUSTACHE_TEMPLATE_ENGINE.equalsIgnoreCase(templateEngine)) {
-            additionalProperties.add(String.format("%s=%s", CodegenConstants.TEMPLATE_ENGINE, CodegenConstants.MUSTACHE_TEMPLATE_ENGINE));
-        } else {
-            additionalProperties.add(String.format("%s=%s", CodegenConstants.TEMPLATE_ENGINE, CodegenConstants.HANDLEBARS_TEMPLATE_ENGINE));
-        }
+//        if (CodegenConstants.MUSTACHE_TEMPLATE_ENGINE.equalsIgnoreCase(templateEngine)) {
+//            additionalProperties.add(String.format("%s=%s", CodegenConstants.TEMPLATE_ENGINE, CodegenConstants.MUSTACHE_TEMPLATE_ENGINE));
+//        } else {
+//            additionalProperties.add(String.format("%s=%s", CodegenConstants.TEMPLATE_ENGINE, CodegenConstants.HANDLEBARS_TEMPLATE_ENGINE));
+//        }
+        additionalProperties.add(String.format("%s=%s", CodegenConstants.TEMPLATE_ENGINE, CodegenConstants.MUSTACHE_TEMPLATE_ENGINE));
 
         applySystemPropertiesKvpList(systemProperties, configurator);
         applyInstantiationTypesKvpList(instantiationTypes, configurator);
